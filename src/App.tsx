@@ -1,12 +1,15 @@
-import './App.css'
+import './App.css';
+import Card from "./components/Card/Card.tsx";
 
-function App() {
 
-  return (
-    <>
+const App = () => {
 
-    </>
-  )
-}
+    return (
+      <div className="playingCards faceImages">
+          <Card rank={'K'} suit={'diams'}/>
+      </div>
+)
+    ;
+};
 
-export default App
+export default App;
