@@ -17,24 +17,22 @@ const App = () => {
         setHand(cards);
     };
 
-    if (hand.length === 0) {
         return (
-            <div className='btn-block'>
-                <button onClick={dealCards}>Раздай карты</button>
+            <div className='App'>
+                {hand.length === 0 ? (
+                    <button onClick={dealCards}>Раздать карты</button>
+                ) : (
+                    <div>
+                        <button onClick={dealCards}>Раздать новые карты</button>
+                        <div className="playingCards faceImages">
+                            {hand.map((card, index) => (
+                                <Card key={index} rank={card.rank} suit={card.suit} />
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         );
-    }else {
-        return (
-            <div>
-                <div className="playingCards faceImages">
-                    {hand.map((card, index) => (
-                        <Card key={index} rank={card.rank} suit={`${card.suit}`}/>
-                    ))}
-                </div>
-                <button onClick={dealCards}>Раздай карты</button>
-            </div>
-        );
-    }
-};
+    };
 
 export default App;
