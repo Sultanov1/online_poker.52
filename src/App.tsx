@@ -25,7 +25,7 @@ const App = () => {
 
         return (
             <div className='App'>
-                <div>{hand.length === 0 ? <p>Результат раунда: пусто</p> : `Результат раунда: ${outcome}`}</div>
+                <div>{hand.length === 0 ? <p>Результат раунда: <span>пусто</span></p> : <p>Результат раунда: {outcome}</p> }</div>
                 {hand.length === 0 ? (
                     <button onClick={dealCards}>Раздать карты</button>
                 ) : (

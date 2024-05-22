@@ -23,6 +23,7 @@ class CardDeck {
     public getCards(howMany: number): MyCard[] {
         const selectedCards: MyCard[] = [];
         for (let i = 0; i < howMany; i++) {
+
             selectedCards.push(this.getCard());
         }
         return selectedCards;
